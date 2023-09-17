@@ -8,7 +8,7 @@ By the way, this is my first project in C
 
 ### Dependencies:
 
-`iio-sensor-proxy` is a runtime dependencies and is not needed to build
+`iio-sensor-proxy` is a runtime dependency and is not needed to build
 
 Arch Linux:
 ```sh
@@ -19,4 +19,4 @@ After installing all required dependencies run
 ```sh
 make all
 ```
-Created binary will be located in `build/wlr-autorotate`
+Created binary will be located at `build/wlr-autorotate`
