@@ -1,0 +1,6 @@
+build/
+protocols/*.c
+protocols/*.h
+protocols/*.o
+
+.vscode
