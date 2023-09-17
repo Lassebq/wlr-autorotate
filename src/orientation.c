@@ -9,13 +9,12 @@ struct Orientation
     enum wl_output_transform transform;
 };
 
-struct Orientation orientations[] = {
+static const struct Orientation orientations[] = {
     [ORIENTATION_UNDEFINED] = {"undefined", -1},
     [ORIENTATION_NORMAL] = {"normal", WL_OUTPUT_TRANSFORM_NORMAL},
     [ORIENTATION_BOTTOM_UP] = {"bottom-up", WL_OUTPUT_TRANSFORM_180},
     [ORIENTATION_LEFT_UP] = {"left-up", WL_OUTPUT_TRANSFORM_90},
-    [ORIENTATION_RIGHT_UP] = {"right-up", WL_OUTPUT_TRANSFORM_270}
-};
+    [ORIENTATION_RIGHT_UP] = {"right-up", WL_OUTPUT_TRANSFORM_270}};
 
 const char *orientation_to_string(OrientationUp o)
 {
@@ -36,6 +35,7 @@ OrientationUp string_to_orientation(const char *orientation)
     return ORIENTATION_UNDEFINED;
 }
 
-enum wl_output_transform orientation_transform(OrientationUp o) {
+enum wl_output_transform orientation_transform(OrientationUp o)
+{
     return orientations[o].transform;
 }
