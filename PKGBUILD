@@ -15,15 +15,6 @@ makedepends=('cmake'
 source=("$pkgname::git+https://github.com/Lassebq/wlr-autorotate.git")
 sha256sums=('SKIP')
 
-pkgver() {
-    cd "$srcdir/$pkgname"
-    if git describe --long --tags >/dev/null 2>&1; then
-        git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
-    else
-        printf '%s.%s' "$(git rev-list --count HEAD)" "$(git describe --always)"
-    fi
-}
-
 build() {
   cd "$srcdir/$pkgname"
   make all
