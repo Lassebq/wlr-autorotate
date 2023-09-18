@@ -14,7 +14,7 @@ protocols: protocols/wlr-output-management-unstable-v1-protocol.o
 
 clear:
 	rm -rf build
-	rm -f *.o *-protocol.h *-protocol.c
+	rm -f protocols/*.o protocols/*.h protocols/*.c
 
 release:
 	mkdir -p build && cmake --no-warn-unused-cli -DCMAKE_BUILD_TYPE:STRING=Release -B./build -G "Unix Makefiles"
